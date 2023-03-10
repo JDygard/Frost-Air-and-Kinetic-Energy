@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import MasterStatusBar from './MasterStatusBar';
 import ZoneGlanceBar from './ZoneGlanceBar';
 
-const Dashboard = ({ systemStatus, alerts, zones }) => {
-    console.log(zones)
+const Dashboard = ({ alerts, zones }) => {
   return (
     <div className="dashboard">
       <MasterStatusBar status="ok" />
