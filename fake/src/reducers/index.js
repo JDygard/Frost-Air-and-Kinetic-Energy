@@ -53,7 +53,7 @@ const initialState = {
     },
     {
       id: 7,
-      name: 'Human Resources Department',
+      name: 'Human Resources',
       setTemperature: 70,
       currentTemperature: 72,
       humidity: 45,

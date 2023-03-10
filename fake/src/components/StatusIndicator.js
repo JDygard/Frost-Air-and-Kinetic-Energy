@@ -24,8 +24,7 @@ const StatusIndicator = ({ level }) => {
   } else if (level === 'high') {
     blocks.push(greenBlock, greenBlock, greenBlock);
   }
-  console.log(blocks)
-  return <div>{blocks}</div>;
+  return <div style={{ marginRight:"1px", marginLeft:"1px", display:"inline-block"}}>{blocks}</div>;
 };
 
 export default StatusIndicator;
