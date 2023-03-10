@@ -1,5 +1,15 @@
 import * as ActionTypes from '../constants/ActionTypes';
 
+export const updateZoneTemperature = (zoneId, temperature) => {
+  return {
+    type: ActionTypes.UPDATE_ZONE_TEMPERATURE,
+    payload: {
+      zoneId,
+      temperature
+    }
+  };
+};
+
 export const updateTemperature = (temperature) => {
   return {
     type: ActionTypes.UPDATE_TEMPERATURE,
