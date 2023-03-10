@@ -1,24 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import StatusIndicator from './StatusIndicator';
+import BoltTwoToneIcon from '@mui/icons-material/BoltTwoTone';
+import OpacityTwoToneIcon from '@mui/icons-material/OpacityTwoTone';
+import BuildTwoToneIcon from '@mui/icons-material/BuildTwoTone';
+import AirTwoToneIcon from '@mui/icons-material/AirTwoTone';
+import ThermostatTwoToneIcon from '@mui/icons-material/ThermostatTwoTone';
+import ShowChartTwoToneIcon from '@mui/icons-material/ShowChartTwoTone';
+import TuneTwoToneIcon from '@mui/icons-material/TuneTwoTone';
+import { Link } from 'react-router-dom';
+import '../styles/ZoneGlanceBar.css';
 
-const ZoneGlanceBar = ({ zone, humidity, fanSpeed, temperature }) => {
+const ZoneGlanceBar = ({ zoneId, zone, humidity, fanSpeed, temperature }) => {
+  const [showChart, setShowChart] = useState(false);
+
+  const handleShowChart = () => {
+    setShowChart(!showChart);
+  };
+
   return (
     <div className="zone">
-      <h2>{zone.name}</h2>
-      <p>Current Temperature: {temperature}°F</p>
-      <p>Set Temperature: {zone.setTemperature}°F</p>
-      <p>Humidity: {humidity}%</p>
-      <p>Fan Speed: {fanSpeed}</p>
+      <h5 className="zone__name">{zone.name}</h5>
+      <span className="zone__icons">
+        <StatusIndicator level="high" className="zone__status-indicator" />
+        <BoltTwoToneIcon className="zone__icon" />
+        <StatusIndicator level="high" className="zone__status-indicator" />
+        <ThermostatTwoToneIcon className="zone__icon" />
+        <StatusIndicator level="high" className="zone__status-indicator" />
+        <OpacityTwoToneIcon className="zone__icon" />
+        <StatusIndicator level="high" className="zone__status-indicator" />
+        <AirTwoToneIcon className="zone__icon" />
+        <StatusIndicator level="high" className="zone__status-indicator" />
+        <BuildTwoToneIcon className="zone__icon" />
+        <button className="zone__button" onClick={handleShowChart}><ShowChartTwoToneIcon /></button>
+        
+        <Link
+          to={`/ZoneView/${zoneId}`}
+          className="zone__button"
+        >
+          <TuneTwoToneIcon />
+        </Link>
+
+        {/* Render chart if showChart is true */}
+        {showChart && <p>Chart goes here</p>}
+      </span>
     </div>
   );
 };
 
 const mapStateToProps = (state, ownProps) => {
-  const zoneState = state.zones.zones.find((zone) => zone.id === ownProps.zone.id);
+  const zoneId = ownProps.zoneId;
+  const zoneState = state.zones.zones.find((zone) => zone.id === zoneId);
   return {
+    zone: zoneState,
     humidity: zoneState.humidity,
     fanSpeed: zoneState.fanSpeed,
-    temperature: zoneState.currentTemperature
+    temperature: zoneState.currentTemperature,
   };
 };
 

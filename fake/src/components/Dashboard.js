@@ -1,14 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import MasterStatusBar from './MasterStatusBar';
 import ZoneGlanceBar from './ZoneGlanceBar';
 
 const Dashboard = ({ systemStatus, alerts, zones }) => {
     console.log(zones)
   return (
     <div className="dashboard">
-      <div className="dashboard__system-status">
-        System Status: {systemStatus}
-      </div>
+      <MasterStatusBar status="ok" />
       {alerts.length > 0 && (
         <div className="dashboard__alerts">
           Alerts: {alerts.map((alert) => alert.message).join(', ')}
@@ -16,7 +15,7 @@ const Dashboard = ({ systemStatus, alerts, zones }) => {
       )}
       <div className="dashboard__zones">
         {zones.zones.map((zone) => (
-            <ZoneGlanceBar key={zone.id} zone={zone} />
+            <ZoneGlanceBar key={zone.id} zone={zone} zoneId={zone.id} />
         ))}
       </div>
     </div>
