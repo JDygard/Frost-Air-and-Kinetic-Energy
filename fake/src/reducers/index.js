@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import * as ActionTypes from '../constants/ActionTypes';
+
 const initialState = {
   zones: [
     {
@@ -151,14 +152,6 @@ const initialState = {
           currentTemperature: 21,
           humidity: 50,
           fanSpeed: 'High'
-        },
-        {
-          id: 14,
-          name: 'Oven',
-          setTemperature: 180,
-          currentTemperature: 175,
-          humidity: 40,
-          fanSpeed: 'Medium'
         },
         {
           id: 15,
