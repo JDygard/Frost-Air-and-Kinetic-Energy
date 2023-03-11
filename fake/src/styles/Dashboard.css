@@ -1,0 +1,26 @@
+.dashboard {
+  transition: transform 0.5s ease-in-out;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.dashboard--hide {
+  transform: translateX(-100%);
+  width: 100vw;
+}
+
+.zoneview {
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(100%);
+  position: relative;
+  width:100%;
+}
+
+.zoneview--show {
+  transform: translateX(0%);
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.dashboard-wrapper {
+}

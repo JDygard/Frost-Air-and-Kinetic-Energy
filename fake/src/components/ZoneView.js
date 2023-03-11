@@ -3,11 +3,10 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SubZoneGlanceBar from './SubZoneGlanceBar';
 
-const ZoneView = ({ zones }) => {
+const ZoneView = ({ zones, zoneId, classes }) => {
   const [openSubZones, setOpenSubZones] = useState(false);
   const [openMaintenance, setOpenMaintenance] = useState(false);
   const [openEquipment, setOpenEquipment] = useState(false);
-  const { zoneId } = useParams();
   const zone = zones.find((zone) => zone.id === parseInt(zoneId));
 
   if (!zone) {
@@ -16,7 +15,7 @@ const ZoneView = ({ zones }) => {
 
 
   return (
-    <div className="zone-view">
+    <div className={classes.join(' ')}>
       <h2>{zone.name}</h2>
       <p>Current temperature: {zone.currentTemperature}°C</p>
       <p>Set temperature: {zone.setTemperature}°C</p>
