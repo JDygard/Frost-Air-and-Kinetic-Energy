@@ -19,9 +19,9 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route exact path="/ZoneView/:zoneId" element={<ZoneView />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/customerService" element={<CustomerService />} />
-          <Route exact path="/ZoneView/:zoneId" element={<ZoneView />} />
         </Routes>
       </Router>
     </ErrorBoundary>

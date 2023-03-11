@@ -166,6 +166,72 @@ const initialState = {
   ]
 };
 
+const maintenanceIntervals = {
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Replace air filters",
+      "interval": 3,
+      "last_performed": "2022-02-15"
+    },
+    {
+      "id": 2,
+      "name": "Clean condenser coils",
+      "interval": 12,
+      "last_performed": "2021-09-01"
+    },
+    {
+      "id": 3,
+      "name": "Inspect and clean evaporator coils",
+      "interval": 6,
+      "last_performed": "2021-12-01"
+    },
+    {
+      "id": 4,
+      "name": "Check and tighten electrical connections",
+      "interval": 6,
+      "last_performed": "2021-12-01"
+    },
+    {
+      "id": 5,
+      "name": "Check and calibrate thermostats",
+      "interval": 12,
+      "last_performed": "2021-09-01"
+    },
+    {
+      "id": 6,
+      "name": "Inspect and lubricate motors and bearings",
+      "interval": 6,
+      "last_performed": "2021-12-01"
+    },
+    {
+      "id": 7,
+      "name": "Inspect and adjust fan belts",
+      "interval": 6,
+      "last_performed": "2021-12-01"
+    },
+    {
+      "id": 8,
+      "name": "Clean and check operation of humidifiers and dehumidifiers",
+      "interval": 12,
+      "last_performed": "2021-09-01"
+    },
+    {
+      "id": 9,
+      "name": "Check and recharge refrigerant levels",
+      "interval": 12,
+      "last_performed": "2021-09-01"
+    },
+    {
+      "id": 10,
+      "name": "Inspect and test safety controls",
+      "interval": 12,
+      "last_performed": "2021-09-01"
+    }
+  ]
+}
+
+
 const zonesReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_ZONE':

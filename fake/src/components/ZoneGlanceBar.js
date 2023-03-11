@@ -42,7 +42,8 @@ const ZoneGlanceBar = ({ zoneId, zone, humidity, fanSpeed, temperature }) => {
         </Link>
 
         {/* Render chart if showChart is true */}
-        {showChart && <p>Chart goes here</p>}
+        <p className={`zone__chart ${showChart ? 'zone__chart--show' : ''}`}>Chart goes here</p>
+
       </span>
     </div>
   );
