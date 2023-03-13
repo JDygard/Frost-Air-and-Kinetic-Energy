@@ -33,6 +33,7 @@
 
   .slider {
     color: #f44336;
+    width: 80%;
   }
   
   .slider .MuiSlider-thumb {
@@ -54,7 +55,6 @@
   .slider-blue {
     color: #2196f3;
     width: 80%;
-    align-self: flex-end;
   }
   
   .slider-blue .MuiSlider-thumb {

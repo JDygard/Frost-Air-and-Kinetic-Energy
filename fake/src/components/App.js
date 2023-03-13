@@ -14,17 +14,19 @@ import '../styles/global.css';
 
 const App = () => {
   return (
-    <ErrorBoundary>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route exact path="/ZoneView/:zoneId" element={<ZoneView />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/customerService" element={<CustomerService />} />
-        </Routes>
-      </Router>
-    </ErrorBoundary>
+    <div className='lock-it-up'>
+      <ErrorBoundary>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route exact path="/ZoneView/:zoneId" element={<ZoneView />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/customerService" element={<CustomerService />} />
+          </Routes>
+        </Router>
+      </ErrorBoundary>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     background-color: #f1f1f1;
     border: 1px solid lightgrey;
   }
@@ -13,8 +13,7 @@
   }
   
   .zone__icon {
-    margin-left: 10px;
-    margin-right: 2px;
+    margin-right: 10px;
   }
   
   .zone__button {

@@ -25,6 +25,9 @@ const SliderLockBox = () => {
 
     return (
         <div className={`slider-lock-box ${locked ? 'locked' : ''}`}>
+        <button className="lock-button" onClick={handleLockToggle}>
+            {locked ? <LockIcon /> : <LockOpenIcon />}
+        </button>
             <div className="slider-container">
                 <div className="slider-range">
                     <WbSunnyIcon />
@@ -75,9 +78,6 @@ const SliderLockBox = () => {
                     />
                 </div>
             </div>
-            <button className="lock-button" onClick={handleLockToggle}>
-                {locked ? <LockIcon /> : <LockOpenIcon />}
-            </button>
         </div>);
 };
 

@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+// write a markdown readme for this application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frost Air and Kinetic Energy HVAC (FAKE HVAC)
+This is built as a portfolio piece for a React-based industrial HVAC control application. The focus is on performance, accessibility and comfort of users.
 
-## Available Scripts
+# Design Philosophy
+This is designed to be a "one-stop shop" for the health and operation of the HVAC system, with three app authorization levels: 
 
-In the project directory, you can run:
+```
+Administrative: Full access to all system controls and data. This level will be capable of controlling the ranges of temperature controls for the whole building.
 
-### `npm start`
+Maintenance: Full access to zone controls, data and maintenance information.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Supervisor: Full access to zone and subzone controls.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+User/Panel: This is an authorization given to a single static control station or user to have control over a single zone or subzone.
+```
 
-### `npm test`
+***
+## Dashboard
+The Dashboard component is intended to be the base page, relating all information about the entire system at a glance. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Status Indicator
+This element will evaluate and display total system health at a glance, separated into three categories: Efficiency, Temperature, and Maintenance status
 
-### `npm run build`
+### Alert Bar
+Critical alerts, warnings and status advisories will be displayed in a field below the status indicator for quick information at a glance.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Zone glance bars
+Each reusable "glance bar" is hooked up to the state and will derive the overall health of each zone based on the most recent data. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+Bolt symbol: Indicates energy usage status in terms of how the administrator has set what constitutes efficient use of electricity for heating/cooling.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Thermostat: Indicates average zone temperature in terms of human comfort.
 
-### `npm run eject`
+Water drop (contrast symbol): Indicates humidity in terms of ideal human comfort.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Wind icon: Indicates airflow in terms of maintaining appropriate backflow for efficient operation.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Maintenance icon: Indicates maintenance status in terms of impending preventive maintenance tasks.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The vertically oriented pips change color based on the health of the zone. They are lined up vertically, similarly to aircraft instrumentation to have outlying information stand out at a glance.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Charts will help display historical data from InfluxDB in 1hr, 8hr, 24hr, and 1wk timeframes.
 
-## Learn More
+The settings icon opens the zone view.
+***
+## Zone View
+The zone view is for a single zone. It will display all information about the zone, including the status of the zone, the status of the subzones, the maintenance status information and the status of the equipment in the zone.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Temperature
+This lets an administrator or supervisor set the day- and night-time temperature ranges for subzones. User-level accounts will be able to set individual thermostats within these ranges.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Technologies used
+## Create React App
+For expediency, this project was bootstrapped with Create React App. This is a great tool for getting a React application up and running quickly. It also provides a great development environment with hot reloading and a test runner.
 
-### Analyzing the Bundle Size
+## React-Redux
+This application uses React-Redux for state management. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This will make it easy to connect the app to a backend for disseminating live information from multiple sources to be used throughout the app.
 
-### Making a Progressive Web App
+## InfluxDB
+This application will use InfluxDB as a time-series database. This is a great tool for storing and querying time-series data. It is also a great tool for storing and querying data from multiple sources.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will enable us to use the data from multiple sources to create a single source of truth for live charts used throughout the application.
 
-### Advanced Configuration
+## React-Charts
+This application will use React-Charts for displaying charts.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+React-Charts was chosen because it's the most performant way to render simple, readable line charts for rapid understanding of historical data.
