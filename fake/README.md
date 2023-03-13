@@ -1,5 +1,3 @@
-// write a markdown readme for this application
-
 # Frost Air and Kinetic Energy HVAC (FAKE HVAC)
 This is built as a portfolio piece for a React-based industrial HVAC control application. The focus is on performance, accessibility and comfort of users.
 
