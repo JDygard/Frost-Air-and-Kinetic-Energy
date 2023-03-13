@@ -1,0 +1,40 @@
+.zone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border: 1px solid lightgrey;
+  }
+  
+  .zone__icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .zone__icon {
+    margin-right: 10px;
+  }
+  
+  .zone__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .zone__button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .zone__status-indicator {
+    margin-left: 10px;
+    margin-right: 2px;
+  }
+  

@@ -4,7 +4,7 @@
     align-items: center;
     height: 80px;
     background-color: #F5F5F5;
-    padding: 0 40px;
+    padding-right: 40px;
   }
   
   .navbar__logo a {
@@ -12,10 +12,17 @@
     font-weight: bold;
     color: #333;
     text-decoration: none;
+    padding-left: 20px;
   }
   
   .navbar__logo a:hover {
     color: #000;
+  }
+
+  .logo {
+    height: 40px;
+    margin-right: 20px;
+    margin-top: 10px;
   }
   
   .navbar__links a {
@@ -24,6 +31,8 @@
     color: #333;
     text-decoration: none;
     margin-left: 30px;
+    word-wrap: break-word;
+    white-space: nowrap;
   }
   
   .navbar__links a:hover {

@@ -8,10 +8,9 @@ import AirTwoToneIcon from '@mui/icons-material/AirTwoTone';
 import ThermostatTwoToneIcon from '@mui/icons-material/ThermostatTwoTone';
 import ShowChartTwoToneIcon from '@mui/icons-material/ShowChartTwoTone';
 import TuneTwoToneIcon from '@mui/icons-material/TuneTwoTone';
-import { Link } from 'react-router-dom';
 import '../styles/ZoneGlanceBar.css';
 
-const ZoneGlanceBar = ({ zoneId, zone, humidity, fanSpeed, temperature }) => {
+const ZoneGlanceBar = ({ zoneId, zone, humidity, fanSpeed, temperature, onClick, handleZoneId }) => {
   const [showChart, setShowChart] = useState(false);
 
   const handleShowChart = () => {
@@ -34,15 +33,10 @@ const ZoneGlanceBar = ({ zoneId, zone, humidity, fanSpeed, temperature }) => {
         <BuildTwoToneIcon className="zone__icon" />
         <button className="zone__button" onClick={handleShowChart}><ShowChartTwoToneIcon /></button>
         
-        <Link
-          to={`/ZoneView/${zoneId}`}
-          className="zone__button"
-        >
-          <TuneTwoToneIcon />
-        </Link>
-
+        <button className="zone__button" onClick={() => onClick(zone.zoneId)}><TuneTwoToneIcon /></button>
+        
         {/* Render chart if showChart is true */}
-        {showChart && <p>Chart goes here</p>}
+        <p className={`zone__chart ${showChart ? 'zone__chart--show' : ''}`}>Chart goes here</p>
       </span>
     </div>
   );
