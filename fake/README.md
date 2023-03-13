@@ -2,7 +2,7 @@
 This is built as a portfolio piece for a React-based industrial HVAC control application. The focus is on performance, accessibility and comfort of users.
 
 # Design Philosophy
-This is designed to be a "one-stop shop" for the health and operation of the HVAC system, with three app authorization levels: 
+This is designed to be a "one-stop shop" for the health and operation of the HVAC system, with four app authorization levels: 
 
 ```
 Administrative: Full access to all system controls and data. This level will be capable of controlling the ranges of temperature controls for the whole building.
