@@ -1,0 +1,77 @@
+.slider-lock-box {
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    position: relative;
+    width:90%;
+  }
+  
+  .slider-box.locked {
+    pointer-events: none;
+  }
+  
+  .slider-box .slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .slider-box .slider-range {
+    display: flex;
+    align-items: center;
+  }
+  
+  .slider-box .MuiSlider-root {
+    height: 24px;
+  }
+  
+  .slider-box .MuiSlider-thumb {
+    width: 24px;
+  }
+
+  .slider {
+    color: #f44336;
+  }
+  
+  .slider .MuiSlider-thumb {
+    background-color: #f44336;
+  }
+  
+  .slider .MuiSlider-track {
+    background-color: #f44336;
+  }
+  
+  .slider .MuiSlider-rail {
+    background-color: #f44336;
+  }
+  
+  .slider .MuiSlider-markLabel {
+    color: #f44336;
+  }
+
+  .slider-blue {
+    color: #2196f3;
+    width: 80%;
+    align-self: flex-end;
+  }
+  
+  .slider-blue .MuiSlider-thumb {
+    background-color: #2196f3;
+  }
+  
+  .slider-blue .MuiSlider-track {
+    background-color: #2196f3;
+  }
+  
+  .slider-blue .MuiSlider-rail {
+    background-color: #2196f3;
+  }
+  
+  .slider-blue .MuiSlider-markLabel {
+    color: #2196f3;
+  }
+  
+  
+  

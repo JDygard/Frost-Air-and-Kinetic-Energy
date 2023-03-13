@@ -6,6 +6,7 @@ import BuildTwoToneIcon from '@mui/icons-material/BuildTwoTone';
 import ThermostatTwoToneIcon from '@mui/icons-material/ThermostatTwoTone';
 import ShowChartTwoToneIcon from '@mui/icons-material/ShowChartTwoTone';
 import '../styles/ZoneGlanceBar.css';
+import '../styles/SubZoneGlanceBar.css'
 
 const SubZoneGlanceBar = ({ subZone, humidity, fanSpeed, temperature }) => {
   const [showChart, setShowChart] = useState(false);
@@ -13,7 +14,6 @@ const SubZoneGlanceBar = ({ subZone, humidity, fanSpeed, temperature }) => {
   const handleShowChart = () => {
     setShowChart(!showChart);
   };
-  console.log(subZone);
 
   const subZoneName = subZone?.name;
 
@@ -41,7 +41,6 @@ const SubZoneGlanceBar = ({ subZone, humidity, fanSpeed, temperature }) => {
 
 const mapStateToProps = (state, ownProps) => {
   const { subZoneId } = ownProps;
-  console.log(subZoneId)
   let subZoneState = null;
   for (const zone of state.zones.zones) {
     const subZones = zone.subZones || [];

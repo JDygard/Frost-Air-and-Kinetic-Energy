@@ -21,19 +21,27 @@ const Dashboard = ({ alerts, zones }) => {
   const [zoneViewClassNames, setZoneViewClassNames] = React.useState(['zoneview']);
   const [zoneId, setZoneId] = React.useState('');
 
+  // Function used in the ZoneView component to return to the dashboard
+  function clearZoneView() {
+    setShowZoneView(false);
+    setTimeout(() => {
+      setZoneId('');
+    }, 500);
+  }
+  
+
+  // Function used in the zoneglancebar component to show the zoneview component
   function handleZoneViewClick(zoneId) {
-    console.log(zoneId)
     setZoneId(zoneId);
     setShowZoneView(prevShowZoneView => !prevShowZoneView);
   }
 
+  // For the slide effect
   React.useEffect(() => {
     if (showZoneView) {
-      console.log('showZoneView is true')
       setClassNames(['dashboard dashboard--hide']);
       setZoneViewClassNames(['zoneview zoneview--show']);
     } else {
-      console.log('showZoneView is false')
       setClassNames(['dashboard']);
       setZoneViewClassNames(['zoneview']);
     }
@@ -50,7 +58,7 @@ const Dashboard = ({ alerts, zones }) => {
         )}
         <ZoneGlanceBars zones={zones.zones} onZoneClick={handleZoneViewClick} />
       </div>
-      {showZoneView && <ZoneView classes={zoneViewClassNames} zoneId={zoneId} />}
+      {showZoneView && <ZoneView classes={zoneViewClassNames} zoneId={zoneId} clearZoneView={clearZoneView} />}
     </div>
   );
 };

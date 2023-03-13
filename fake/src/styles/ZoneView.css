@@ -1,0 +1,25 @@
+.expandable-section {
+    overflow: hidden;
+  }
+  
+  .expandable-section-header {
+    padding: 10px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .expandable-section-header:hover {
+    background-color: #ddd;
+  }
+  
+  .expandable-section-content {
+    background-color: #fff;
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .expandable-section-content.open {
+    max-height: 500px; /* adjust the value as needed */
+  }
+  

@@ -6,11 +6,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <NavLink to="/">FAKE</NavLink>
+        <NavLink to="/">
+          <img src="/FrostAirLogo.png" alt="Frost Logo" className='logo' />
+        </NavLink>
       </div>
       <div className="navbar__links">
-        <NavLink to="/Settings" activeClassName="active">Settings</NavLink>
-        <NavLink to="/CustomerService" activeClassName="active">Customer Service</NavLink>
+        <NavLink to="/Settings" >Settings</NavLink>
+        <NavLink to="/CustomerService" >Customer Service</NavLink>
       </div>
     </nav>
   );
