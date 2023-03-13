@@ -1,64 +1,65 @@
 .zone {
-    display: flex;
-    align-items: center;
-    background-color: #F5F5F5;
-  }
-  
-  .zone__name {
-    display: inline-block;
-    width: 80px;
-    word-wrap: normal;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    align-self: flex-start;
-    flex-shrink: 0;
-  }
-  
-  .zone__icons {
-    display: inline-block;
-    font-size: 16px;
-  }
-  
-  .zone__status-indicator {
-    display: inline-block;
-    margin-right: 10px;
-    height: 16px;
-    width: 16px;
-  }
-  
-  .zone__icon {
-    display: inline-block;
-    font-size: 24px;
-  }
-  
-  .zone__button {
-    display: inline-block;
-    padding: 5px;
-    background-color: #bdbdbd;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-    margin-top: 0px;
-  }
-  
-  .zone__button:hover {
-    background-color: #005CCE;
-  }
+  display: flex;
+  align-items: center;
+  background-color: #F5F5F5;
+  justify-content: space-between;
+}
 
-  .zone__chart {
-    margin: 0;
-    max-height: 0;
-    height:100px;
-    transition: max-height 0.3s ease-in-out;
-    overflow: hidden;
-  }
-  
-  .zone__chart--show {
-    max-height: 200px;
-  }
-  
+.zone__name {
+  display: inline-block;
+  width: 80px;
+  word-wrap: normal;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.zone__icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.zone__status-indicator {
+  display: inline-block;
+  margin-right: 10px;
+  height: 16px;
+  width: 16px;
+}
+
+.zone__icon {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.zone__button {
+  display: inline-block;
+  padding: 5px;
+  background-color: #bdbdbd;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 0px;
+}
+
+.zone__button:hover {
+  background-color: #005CCE;
+}
+
+.zone__chart {
+  margin: 0;
+  max-height: 0;
+  height: 100px;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.zone__chart--show {
+  max-height: 200px;
+}
